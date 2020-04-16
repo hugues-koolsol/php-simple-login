@@ -30,7 +30,7 @@ Pour rappel, les 5 technologies de base qui servent à développer des sites, qu
 * Coté client : javascript
 * Coté client : css
 
-Chacune de ces technologie prêche pour sa paroisse et résultat pratique, on peut se trouver avec des usines à gaz qui mélangent "ce qui se fait de mieux" dans chacune des technomogies.
+Chacune de ces technologie prêche pour sa paroisse et résultat pratique, on peut se trouver avec des usines à gaz qui mélangent "ce qui se fait de mieux" dans chacune des technologies.
 
 Ce mélange devient une catastrophe quand il faut maintenir un site un peu complexe. Je ne parle pas de sites "simples" tels que les blogs ou les vitrines.
 Pour ces derniers, il existe des CMS ( content management system ) qui font très bien l'affaire et permettent à des utilisateurs non informaticiens de gérer leurs pages assez simplement.
