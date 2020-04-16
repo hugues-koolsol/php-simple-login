@@ -30,6 +30,7 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
     <style>
     #click1{
      font-size:1.5em;
+     touch-action: manipulation; /* prevent double click zoom on touch device */
     }
     </style>
     <button id="click1" onclick="">Please wait!</button>
