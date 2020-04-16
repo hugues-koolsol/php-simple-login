@@ -12,7 +12,7 @@ _myObjSvelt1.prototype.addClickInput=function(){
 //========================================================================== 
 _myObjSvelt1.prototype.setClickInput=function(){
  
- document.getElementById('click1').innerHTML='Clicked '+_myObSv1.countClick+' time'+(_myObSv1.countClick>1?'s':'');
+ document.getElementById('click1').innerHTML='Cliqué '+_myObSv1.countClick+' fois';
  document.getElementById('click1').style.background='hsla('+_myObSv1.countClick*10+', 100%, 93%, 1)';
  try{
   localStorage.setItem('countClick', _myObSv1.countClick);
@@ -26,14 +26,14 @@ _myObjSvelt1.prototype.setClickInput=function(){
 //========================================================================== 
 _myObjSvelt1.prototype.computeCalculator=function(){
  var res1=document.getElementById('inp1').value*1+document.getElementById('inp2').value*1;
- document.getElementById('res1').innerHTML=(document.getElementById('inp1').value==''?'nothing':document.getElementById('inp1').value) + ' + ' + document.getElementById('inp2').value + ' = ' + res1 ;
+ document.getElementById('res1').innerHTML=(document.getElementById('inp1').value==''?'rien':document.getElementById('inp1').value) + ' + ' + document.getElementById('inp2').value + ' = ' + res1 ;
 }
 
 
 // font size
 //========================================================================== 
 _myObjSvelt1.prototype.setFontSize=function(){
- document.getElementById('res2').innerHTML=document.getElementById('inp4').value + ' in ' + document.getElementById('inp3').value+ ' px ' ;
+ document.getElementById('res2').innerHTML=document.getElementById('inp4').value + ' en ' + document.getElementById('inp3').value+ ' pixels ' ;
  document.getElementById('res2').style.fontSize=document.getElementById('inp3').value+'px';
 }
 
@@ -44,7 +44,7 @@ _myObjSvelt1.prototype.init=function(){
   
   // input
   document.getElementById('click1').setAttribute('onclick','_myObSv1.addClickInput()');
-  document.getElementById('click1').innerHTML='Clicked 0 times';
+  document.getElementById('click1').innerHTML='Cliqué 0 fois';
   try{
    var tmp=localStorage.getItem('countClick');
    if(!(tmp===null)){

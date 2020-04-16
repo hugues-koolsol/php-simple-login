@@ -18,6 +18,7 @@ function setMenus(){
  menus+=' <a href="monopage_php.php?action=login" class="black">mono page login</a>';
  menus+=' <a href="monopage_ajax.php" class="green">mono page ajax home</a>';
  menus+=' <a href="monopage_ajax.php?action=login" class="green">mono page ajax login</a>';
+ menus+=' <a href="https://blog.koolsol.app/" style="background: linear-gradient(to bottom,#beedff 0%, #7eddff 100%);color:black;">blog koolsol</a>';
  try{
   document.getElementById('menu').innerHTML=menus;
  }catch(e){}

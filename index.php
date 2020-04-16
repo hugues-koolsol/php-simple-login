@@ -6,7 +6,7 @@ include 'inc.php';
 if(!ob_start("ob_gzhandler")) ob_start(); // optional
 
 $htm1='';
-$htm1.=myHeader(array('t'=>'basic multipage home'));
+$htm1.=myHeader(array('t'=>'multipage home'));
 
 echo $htm1; $htm1='';
 if(isset($_SESSION[SESSION_KEY]['login'])){
@@ -16,7 +16,7 @@ if(isset($_SESSION[SESSION_KEY]['login'])){
  $htm1.='</form>';
 }else{
  if(!(isset($_GET['action']) && $_GET['action']=='login')){
-  $htm1.='Hello anonymous, you can <a href="index_multi_login.php">log here</a>';
+  $htm1.='Hello anonyme, vous pouvez vous <a href="index_multi_login.php">logguer ici.</a>';
  }
 }
 echo $htm1; $htm1='';
@@ -24,7 +24,7 @@ echo $htm1; $htm1='';
 ?>
 
 <div style="color:navy;">
- <h2>Il y a 3 exemples de sites web pages dans ces pages.</h2>
+ <h2>Il y a 3 exemples de sites web dans ces pages.</h2>
  <p>
  Chaque exemple de site contient une page d'accueil et une page de login.
  </p>
@@ -62,7 +62,7 @@ echo $htm1; $htm1='';
  <div style="color:green;">
   <h3>Site web en javascript</h3>
   <p>
-   Ce deuxième exemple a été développé en javascript.
+   Ce troisième exemple a été développé en javascript.
   </p>
   <p>
    Un "gros" javascript contient ce qui est affiché et la plupart des traitements.

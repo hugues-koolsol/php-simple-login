@@ -19,12 +19,12 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
   
   <div id="svelt">
   
-   <h2>Some svelte examples</h2>
+   <h2>Des exemples trouvés sur Svelte.js</h2>
    
    <p>
-    Here you will find some simple examples founded on the <a  target="_blank" rel="noopener"  href="https://svelte.dev/">svelt framework</a>
+    Une petite mise en oeuvre d'exemples trouvés sur le <a  target="_blank" rel="noopener"  href="https://svelte.dev/">framework svelte</a>
    </p>
-   <h3>Click example</h3>
+   <h3>Click</h3>
    
    <p>
     <style>
@@ -35,7 +35,7 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
     <button id="click1" onclick="">Please wait!</button>
    </p>
    
-   <h3>Calculator example</h3>
+   <h3>Calculatrice</h3>
    <p>
    <input id="inp1" value="1" type="number">
    <input id="inp2" value="2" type="number">
@@ -43,7 +43,7 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
    </p>
 
    
-   <h3>Font size example</h3>
+   <h3>Taille des caractères</h3>
    <p>
    <input id="inp3" value="16" type="range" min="1" max="64">
    <input id="inp4" value="Hello" type="text">

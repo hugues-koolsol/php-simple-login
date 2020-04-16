@@ -50,9 +50,9 @@ if(isset($_POST['action'])){
 if(!ob_start("ob_gzhandler")) ob_start(); // optional
 $htm1='';
 if(isset($_GET['action']) && $_GET['action']=='login'){
- $htm1.=myHeader(array('t'=>'monopage php login'));
+ $htm1.=myHeader(array('t'=>'monopage login'));
 }else{
- $htm1.=myHeader(array('t'=>'monopage php home'));
+ $htm1.=myHeader(array('t'=>'monopage home'));
 }
 // the content of the page, using the session values when they are set
 echo $htm1; $htm1='';
@@ -72,7 +72,7 @@ if(isset($_SESSION[SESSION_KEY]['login'])){
  $htm1.='</form>';
 }else{
  if(!(isset($_GET['action']) && $_GET['action']=='login')){
-  $htm1.='Hello anonymous, you can <a href="monopage_php.php?action=login">log here</a>';
+  $htm1.='Hello anonyme, vous pouvez vous <a href="monopage_php.php?action=login">logguer ici.</a>';
  }
 }
 if(isset($_SESSION[SESSION_KEY]['message'])){

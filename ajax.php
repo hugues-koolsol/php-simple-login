@@ -69,6 +69,7 @@ if(isset($_POST)&&sizeof($_POST)>0&&isset($_POST['data'])){
    //===========================================================================================
    case 'login':
     $ret['isLogged']=false;
+    // en fait, il faut aussi vérifier que la requête provient de la page en cours, cela peut être fait par un captcha
     if($ret['input']['login']=='admin' && $ret['input']['password']=='admin' ){   // please use password_verify function here !
      $_SESSION[SESSION_KEY]['login']='admin';
      $ret['isLogged']=true;

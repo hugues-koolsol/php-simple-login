@@ -6,6 +6,7 @@ include 'inc.php';
 if(isset($_POST['action'])){
  $redir='./';
  if($_POST['action']=='login'){
+  // en fait, il faut aussi vérifier que la requête provient de la page en cours, cela peut être fait par un captcha
   if($_POST['login']=='admin' && $_POST['password']=='admin'){ // please use password_verify function here !
    $_SESSION[SESSION_KEY]['login']='admin';
    $redir='./';
@@ -22,12 +23,12 @@ if(isset($_POST['action'])){
 //========================= get actions =================================
 if(!ob_start("ob_gzhandler")) ob_start(); // optional
 $htm1='';
-$htm1.=myHeader(array('t'=>'basic multipage login'));
+$htm1.=myHeader(array('t'=>'multipage login'));
 echo $htm1; $htm1='';
 if(!isset($_SESSION[SESSION_KEY]['login'])){
  $htm1.='<form autocomplete="off" method="post" enctype="multipart/form-data">';
- $htm1.='login<input name="login" type="text" maxlength="32" size="32" value="" autocomplete="off" /> ( try admin )<br />';
- $htm1.='password<input name="password" type="password" maxlength="32" size="32"  value="" autocomplete="off" /> ( try admin )<br />';
+ $htm1.='login<input name="login" type="text" maxlength="32" size="32" value="" autocomplete="off" /> (admin)<br />';
+ $htm1.='password<input name="password" type="password" maxlength="32" size="32"  value="" autocomplete="off" /> (admin)<br />';
  $htm1.='<input name="action" value="login" type="submit">';
  $htm1.='</form>';
 }

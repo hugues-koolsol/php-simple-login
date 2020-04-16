@@ -1,4 +1,4 @@
-# Il y a 3 exemples de sites web pages dans ces pages.
+# Il y a 3 exemples de sites web dans ces pages.
 Chaque exemple de site contient une page d'accueil et une page de login.
 
 ## Site web en multipage php
@@ -14,7 +14,7 @@ Les frameworks php sont basés sur ce principe mais contiennent plusieurs pages 
 J'ai beaucoup de mal à travailler avec ce modèle !
 
 ## Site web en javascript
-Ce deuxième exemple a été développé en javascript.
+Ce troisième exemple a été développé en javascript.
 
 Un "gros" javascript contient ce qui est affiché et la plupart des traitements.
 Une partie serveur doit être toutefois implémentée pour certains traitements. Par exemple, les login/mots de passe des utilisateurs sont normalement sur le serveur ( enfin, j'espère ) et il faut aller vérifier les connexions sur le serveur.
@@ -23,7 +23,7 @@ Un javascript supplémentaire contient quelques exemples trouvés dans svelte.js
 J'étais curieux de voir comment implémenter des fonctions de framowork javascript et je touve que le résultat est assez simple.
 
 ## Conclusion
-Pour rappel, les 5 technologies de base qui servent à développer des sites, qu'ils soient de type back office ou front office sont :
+Pour rappel, les 5 technologies de base qui servent à développer des sites, qu'ils soient de type back office ou front office (sites web) sont :
 * Coté serveur : un language, par exemple php, GO, java, node, ...
 * Coté serveur : une base de donnée
 * Coté client : HTML
@@ -41,5 +41,5 @@ Chaque spécialiste verra le site selon son point de vue et je ne parle pas des 
 **Conclusion de la conclusion :**
 
 * Commencez par faire des sites en language serveur en multipage.
-* Mettez vos composants métier dans les fichiers à inclure en fonction des pages
-* Soupoudrez de javascript et de css
+* Mettez vos composants métier dans les fichiers à inclure en fonction des pages.
+* Soupoudrez de javascript et de css.

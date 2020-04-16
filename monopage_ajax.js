@@ -29,7 +29,7 @@ _myObjDefinition1.prototype.setPageContent=function(){
    history.pushState({}, "login", "monopage_ajax.php");
    t+='<h1>basic monopage ajax home</h1>';
    if(_myOb1.isLogged==false){
-    t+='Hello anonymous, you can <a href="javascript:'+_myOb1.obNam+'._displayLoginForm()">log here</a>';
+    t+='Hello anonyme, vous pouvez vous <a href="javascript:'+_myOb1.obNam+'._displayLoginForm()">logguer ici.</a>';
    }else{
     t+='<div>Hello "'+_myOb1.currentUser+'"</div> <button id="logoutButton" onclick="'+_myOb1.obNam+'._logout();">logout</button>'
    }
@@ -40,14 +40,14 @@ _myObjDefinition1.prototype.setPageContent=function(){
     t+='Hello "'+_myOb1.currentUser+'" <button id="logoutButton" onclick="'+_myOb1.obNam+'._logout();">logout</button>'
    }else{
     t+='<div>';
-    t+='login<input name="login" id="login" type="text" maxlength="32" size="32" value="" autocomplete="off"> ( try admin )<br>';
-    t+='password<input name="password" id="password" type="password" maxlength="32" size="32" value="" autocomplete="off"> ( try admin )<br>';
+    t+='login<input name="login" id="login" type="text" maxlength="32" size="32" value="" autocomplete="off"> (admin)<br>';
+    t+='password<input name="password" id="password" type="password" maxlength="32" size="32" value="" autocomplete="off"> (admin)<br>';
     t+='<button id="loginButton" onclick="'+_myOb1.obNam+'._login();">login</button>';
     t+='</div>';
     setTimeout(_myOb1.clearLoginAndPassword,750);
    }
    if(_myOb1.ajaxError==true){
-    t+='<div style="color:red;">wrong user or password OR server problem !</div>';
+    t+='<div style="color:red;">login ou mot de passe OR problème coté serveur !</div>';
    }
    
   }
