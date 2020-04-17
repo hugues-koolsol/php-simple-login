@@ -16,6 +16,57 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
  </head>
  <body>
   <div id="main"></div>
+  <style>
+  h2{border-top:3px red solid;}
+  h3{border-top:1px red solid;}
+  </style>
+  
+  <div id="Exemples">
+   <style>
+    #sortableTodo{border:0px blue solid;display:flex;}
+    #sortableTodo li{border:1px yellow outset;min-height:50px;display:flex;align-items:center;justify-content: space-between;}
+    #sortableTodo ul{width:150px;min-height:52px;}
+    .boxtodo{border:1px #ccc solid;}
+    .delTodo{border:2px red outset;cursor:pointer;border-radius:5px;color:red;height:40px;min-width:35px;align-items: center;text-align: center;justify-content: center;line-height: 35px;}
+    #foo .delTodo{display:none;}
+    .smiley{border:2px plum outset;cursor:pointer;border-radius:5px;color:red;height:40px;min-width:35px;align-items: center;text-align: center;justify-content: center;line-height: 35px;}
+    #bar .smiley{display:none;}
+    .elt1{cursor:pointer;min-height:40px;min-width:111px;}
+   </style>
+
+   <h2>Exemples divers.</h2>
+   <h3>Une todo triable</h3>
+   <p>
+    Attention : les todos de cette liste ne sont pas enregistrés, ce n'est qu'un exemple !
+   </p>
+   
+   <p>
+    Si vous voulez une vraie todo liste qui sera enregistrée dans votre appareil, allez sur <a target="_blank" rel="noopener" href="https://todo.koolsol.app">todo.koolsol.app</a>
+   </p>
+   
+   <input id="inp5" value="nouveau todo !" type="text" size="16" maxlength="128">
+   <button id="addTodo">ajouter ce todo</button>
+   <div id="sortableTodo" style="">
+    <div class="boxtodo">
+     Todo :-\
+     <ul id="foo" style="border:1px blue solid;">
+      <li><div class="elt1" onclick="modifierTodo(this)">Ça c'est à faire et on peut ajouter un smiley avec le bouton ci-contre</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+      <li><div class="elt1" onclick="modifierTodo(this)">On peut faire glisser ce todo dans lla colonne "Done :-\" puis le remettre dans cette colonne</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+      <li><div class="elt1" onclick="modifierTodo(this)">On peut aussi déplacer ce todo dans cette colonne</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+      <li><div class="elt1" onclick="modifierTodo(this)">On peut aussi modifier ce todo en cliquant dessus</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+     </ul>
+    </div>
+    <div  class="boxtodo">
+     Done :-)
+     <ul  id="bar" style="border:1px green solid;">
+      <li><div class="elt1" onclick="modifierTodo(this)">Ca, c'est fait et on peut l'effacer avec le bouton "✘" ci-contre.</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+     </ul>
+    </div>
+   </div>  
+  </div>
+
+  
+  
   
   <div id="svelt">
   
@@ -50,15 +101,14 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
    <input id="inp4" value="Hello" type="text">
    <p id="res2"style="min-height:320px;"></p>
    </p>
-
-   
    
   </div>
-  
+
+
   
   <script>var _myOb1=null;</script>
-  <script src="js-main-v20200416-1.js" async></script>
-  <script src="monopage_ajax.js" async></script>
-  <script src="monopage_ajax_svelt_examples.js" async></script>
+  <script src="js-main-v20200417-1.js" async></script>
+  <script src="monopage_ajax-v20200417-1.js" async></script>
+  <script src="monopage_ajax_svelt_examples-v20200417-1.js" async></script>
  </body>
 </html>

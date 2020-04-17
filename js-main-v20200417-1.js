@@ -1,4 +1,4 @@
-//console.log('main js, do common stuff in main-v20200416-1.js');
+//console.log('main js, do common stuff in main-v20200417-1.js');
 //================================================================================================
 var getAbsoluteUrl=(function(){ // https://davidwalsh.name/essential-javascript-functions
 	var a;

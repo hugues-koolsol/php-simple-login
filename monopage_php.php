@@ -24,7 +24,7 @@ function myHeader($opt=array()){ // The two function myHeader and myFooter are g
 }
 //========================= function footer =============================
 function myFooter($opt=array()){ // The two function myHeader and myFooter are generic and should be put in the inc.php file.
- $t='</div><!-- main --><script src="js-main-v20200416-1.js" async></script></body></html>';return $t;
+ $t='</div><!-- main --><script src="js-main-v20200417-1.js" async></script></body></html>';return $t;
 }
 // Here starts the specific of each page.
 // The index/home page does not need the "if(isset($_POST['action'])){...}" block but the login page, surely !

@@ -35,7 +35,7 @@ function myHeader($opt=array()){
 //========================= function footer =============================
 function myFooter($opt=array()){
  $t='   </div><!-- main -->'.CRLF;
- $t.='  <script src="js-main-v20200416-1.js" async></script>'.CRLF; // Mettre async , c'est bien :-)
+ $t.='  <script src="js-main-v20200417-1.js" async></script>'.CRLF; // Mettre async , c'est bien :-)
  $t.=' </body>'.CRLF;
  $t.='</html>';
  return $t;

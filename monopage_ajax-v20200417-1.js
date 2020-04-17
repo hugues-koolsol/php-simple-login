@@ -1,4 +1,8 @@
 "use strict";
+function setMenusAfter(){
+ setMenus();
+}
+//========================================================================== 
 function _myObjDefinition1(p){
  //========================================================================== 
  console.log('the object is loaded with parameters',JSON.stringify(p));
@@ -210,7 +214,11 @@ _myObjDefinition1.prototype.init=function(){
   if(String(document.location).indexOf('?action=login')>=0){
    _myOb1.currentPage='login';
   }
-  setMenus();
+  try{
+   setMenus();
+  }catch(e){
+   setTimeout(setMenusAfter,150);
+  }
   _myOb1.getIsLogged();
 }
 _myOb1=new _myObjDefinition1({objectName:'_myOb1'});
