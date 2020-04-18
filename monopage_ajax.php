@@ -1,3 +1,6 @@
+<?php
+include 'inc.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
  <head>
@@ -10,7 +13,7 @@ html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-
 body{color:navy;overflow-y:scroll;}a,a:visited{border:2px #ddd outset;border-radius:5px;}.navy{color:navy;}.green{color:green;}.black{color:#444;}
 input[type=password],input[type=text],input[type=number]{padding: 2px;border:1px #ddd inset;}
 input[type=submit],button{padding: 4px;border:1px #ddd outset;}
-a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
+a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;-webkit-user-select: none !important;}
 #menu{display:flex;justify-content: space-evenly;}
   </style>
  </head>
@@ -44,24 +47,30 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
     Si vous voulez une vraie todo liste qui sera enregistrée dans votre appareil, allez sur <a target="_blank" rel="noopener" href="https://todo.koolsol.app">todo.koolsol.app</a>
    </p>
    
+   
    <input id="inp5" value="nouveau todo !" type="text" size="16" maxlength="128">
    <button id="addTodo">ajouter ce todo</button>
    <div id="sortableTodo" style="">
+   
     <div class="boxtodo">
      Todo :-\
      <ul id="foo" style="border:1px blue solid;">
-      <li><div class="elt1" onclick="modifierTodo(this)">Ça c'est à faire et on peut ajouter un smiley avec le bouton ci-contre</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
-      <li><div class="elt1" onclick="modifierTodo(this)">On peut faire glisser ce todo dans lla colonne "Done :-\" puis le remettre dans cette colonne</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
-      <li><div class="elt1" onclick="modifierTodo(this)">On peut aussi déplacer ce todo dans cette colonne</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
-      <li><div class="elt1" onclick="modifierTodo(this)">On peut aussi modifier ce todo en cliquant dessus</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+      <li><button class="elt1">Ça c'est à faire et on peut ajouter un smiley avec le bouton ci-contre</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
+      <li><button class="elt1">On peut faire glisser ce todo dans lla colonne "Done :-)" puis le remettre dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
+      <li><button class="elt1">On peut aussi déplacer ce todo dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
+      <li><button class="elt1">On peut aussi modifier ce todo en cliquant dessus</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
      </ul>
     </div>
-    <div  class="boxtodo">
+    
+    
+    <div class="boxtodo">
      Done :-)
      <ul  id="bar" style="border:1px green solid;">
-      <li><div class="elt1" onclick="modifierTodo(this)">Ca, c'est fait et on peut l'effacer avec le bouton "✘" ci-contre.</div><div class="delTodo" onclick="deleteTodo(this)">✘</div><div class="smiley" onclick="addsmiley(this)">🤡</div></li>
+      <li><button class="elt1">Ca, c'est fait et on peut l'effacer avec le bouton "✘" ci-contre.</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
      </ul>
     </div>
+    
+    
    </div>  
   </div>
 
@@ -107,8 +116,8 @@ a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;}
 
   
   <script>var _myOb1=null;</script>
-  <script src="js-main-v20200417-1.js" async></script>
-  <script src="monopage_ajax-v20200417-1.js" async></script>
-  <script src="monopage_ajax_svelt_examples-v20200417-1.js" async></script>
+  <script src="js-main.js?v=<?php echo VERSION; ?>" async></script>
+  <script src="monopage_ajax.js?v=<?php echo VERSION; ?>" async></script>
+  <script src="monopage_ajax_examples.js?v=<?php echo VERSION; ?>" async></script>
  </body>
 </html>
