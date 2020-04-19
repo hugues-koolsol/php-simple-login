@@ -13,9 +13,7 @@ function _myObjDefinition1(p){
  this.currentPage='index';
  this.currentUser='';
  this.ajaxError=false;
- this.menusAndPage='<div id="menu">';
- this.menusAndPage+='</div>';
- this.menusAndPage+='<div id="page"></div>';
+ this.menusAndPage='<div id="menu"></div><div id="page"></div>';
 }
 //========================================================================== 
 //========================================================================== 
@@ -31,7 +29,7 @@ _myObjDefinition1.prototype.setPageContent=function(){
   var t='';
   if(_myOb1.currentPage=='index'){
    history.pushState({}, "login", "monopage_ajax.php");
-   t+='<h1>basic monopage ajax home</h1>';
+   t+='<h1>monopage ajax home</h1>';
    if(_myOb1.isLogged==false){
     t+='Hello anonyme, vous pouvez vous <a href="javascript:'+_myOb1.obNam+'._displayLoginForm()">logguer ici.</a>';
    }else{
@@ -39,7 +37,7 @@ _myObjDefinition1.prototype.setPageContent=function(){
    }
   }else if(_myOb1.currentPage=='login'){
    history.pushState({}, "login", "monopage_ajax.php?action=login");
-   t+='<h1>basic monopage ajax login</h1>';
+   t+='<h1>monopage ajax login</h1>';
    if(_myOb1.isLogged==true){
     t+='Hello "'+_myOb1.currentUser+'" <button id="logoutButton" onclick="'+_myOb1.obNam+'._logout();">logout</button>'
    }else{

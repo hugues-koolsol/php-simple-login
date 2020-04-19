@@ -26,6 +26,9 @@ echo $htm1; $htm1='';
 <div style="color:navy;">
  <h2>Il y a 3 exemples de sites web dans ces pages.</h2>
  <p>
+  Les sources de ces pages sont sur <a target="_blank" rel="noopener" href="https://github.com/hugues-koolsol/php-simple-login">github</a>
+ </p>
+ <p>
  Chaque exemple de site contient une page d'accueil et une page de login.
  </p>
 
@@ -47,7 +50,7 @@ echo $htm1; $htm1='';
   Ce deuxième exemple a été développé pour faire un essai.
   </p>
   <p>
-  Tout est rassemblé dans une seule page php. 
+  Tout est rassemblé dans une seule page php ( + le inc.php qui est commun à tout le monde ). 
   <br />
   Les frameworks php sont basés sur ce principe mais contiennent plusieurs pages php qui sont incluses en fonction de l'action requise.
   <br />

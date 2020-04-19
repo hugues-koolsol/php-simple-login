@@ -1,31 +1,6 @@
 <?php
-define('CRLF',"\r\n"); // always useful
-define('SESSION_KEY','myapp1'); // useful if you have multiple applications on the same server, each login from different application is different.
+include 'inc.php';
 session_start(); // in a multipage applivation you may have some pages that don't need sessions like about-us.php.
-//========================= function header =============================
-function myHeader($opt=array()){ // The two function myHeader and myFooter are generic and should be put in the inc.php file.
- $t='<!DOCTYPE html><html lang="fr"><head><meta charset="utf8" />';
- $t.='<title>'.$opt['t'].'</title>';
- $t.='<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">';
- $t.='  <style type="text/css">'.CRLF;
- $t.='html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}'.CRLF;
- $t.='*,*:before,*:after{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit;padding:0;border:0;}'.CRLF;
- $t.='body{color:navy;overflow-y:scroll;}a,a:visited{border:2px #ddd outset;border-radius:5px;}.navy{color:navy;}.green{color:green;}.black{color:#444;}'.CRLF;
- $t.='input[type=password],input[type=text]{padding: 2px;border:1px #ddd inset;}'.CRLF;
- $t.='input[type=submit]{padding: 4px;border:1px #ddd outset;}'.CRLF;
- $t.='a{display:inline-block;min-height:31px;border:2px #eee outset;padding:3px;}'.CRLF;
- $t.='#menu{display:flex;justify-content: space-evenly;}'.CRLF;
- $t.='  </style>'.CRLF;
- $t.='</head>';
- $t.='<body>';
- $t.='<div id="main"><div id="menu"></div>';
- $t.='<h1>'.$opt['t'].'</h1>';
- return $t;
-}
-//========================= function footer =============================
-function myFooter($opt=array()){ // The two function myHeader and myFooter are generic and should be put in the inc.php file.
- $t='</div><!-- main --><script src="js-main-v20200417-1.js" async></script></body></html>';return $t;
-}
 // Here starts the specific of each page.
 // The index/home page does not need the "if(isset($_POST['action'])){...}" block but the login page, surely !
 //========================= post actions ================================

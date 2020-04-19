@@ -1,23 +1,18 @@
 <?php
+define('BNF',basename( __FILE__ ));
 include 'inc.php';
+//========================= get actions =================================
+if(!ob_start("ob_gzhandler")) ob_start(); // optional
+
+$htm1='';
+if(isset($_GET['action']) && $_GET['action']=='login'){
+ $htm1.=myHeader(array('t'=>'monopage ajax login','nomain'=>true));
+}else{
+ $htm1.=myHeader(array('t'=>'monopage ajax home','nomain'=>true));
+}
+echo $htm1; $htm1='';
+
 ?>
-<!DOCTYPE html>
-<html lang="fr">
- <head>
-  <meta charset="utf8" />
-  <title>basic multipage home</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">  
-  <style type="text/css">
-html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-*,*:before,*:after{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit;padding:0;border:0;}
-body{color:navy;overflow-y:scroll;}a,a:visited{border:2px #ddd outset;border-radius:5px;}.navy{color:navy;}.green{color:green;}.black{color:#444;}
-input[type=password],input[type=text],input[type=number]{padding: 2px;border:1px #ddd inset;}
-input[type=submit],button{padding: 4px;border:1px #ddd outset;}
-a{display:inline-block;min-height:31px;border:2px #ddd outset;padding:3px;-webkit-user-select: none !important;}
-#menu{display:flex;justify-content: space-evenly;}
-  </style>
- </head>
- <body>
   <div id="main"></div>
   <style>
   h2{border-top:3px red solid;}

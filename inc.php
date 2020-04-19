@@ -1,5 +1,5 @@
 <?php
-define('VERSION','20200418-1');
+define('VERSION','20200419-1');
 define('CRLF',"\r\n"); // always useful
 define('SESSION_KEY','myapp1');
 //========================= function header =============================
@@ -24,18 +24,24 @@ function myHeader($opt=array()){
  $t.='  </style>'.CRLF;
  $t.=' </head>'.CRLF;
  $t.=' <body>'.CRLF;
- $t.='  <div id="main">'.CRLF;
- $t.='   <div id="menu">'.CRLF;
- // ici on devrait afficher les menus en fonction du profil utilisateur.
- // Pour une question de simplicété de ce site, je ne l'ai pas fait.
- // Le menu dans ce site est géré dans le javascript plus bas qui est commun à toutes les pages
- $t.='   </div>'.CRLF;
- $t.='  <h1>'.$opt['t'].'</h1>'.CRLF;
+ if(isset($opt['nomain']) && $opt['nomain']==true){
+ }else{
+  $t.='  <div id="main">'.CRLF;
+  $t.='   <div id="menu">'.CRLF;
+  // ici on devrait afficher les menus en fonction du profil utilisateur.
+  // Pour une question de simplicété de ce site, je ne l'ai pas fait.
+  // Le menu dans ce site est géré dans le javascript plus bas qui est commun à toutes les pages
+  $t.='   </div>'.CRLF;
+  $t.='  <h1>'.$opt['t'].'</h1>'.CRLF;
+ }
  return $t;
 }
 //========================= function footer =============================
 function myFooter($opt=array()){
- $t='   </div><!-- main -->'.CRLF;
+ if(isset($opt['nomain']) && $opt['nomain']==true){
+ }else{
+  $t='   </div><!-- main -->'.CRLF;
+ }
  $t.='  <script src="js-main.js?v='.VERSION.'" async></script>'.CRLF; // Mettre async , c'est bien :-)
  $t.=' </body>'.CRLF;
  $t.='</html>';
