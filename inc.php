@@ -1,5 +1,5 @@
 <?php
-define('VERSION','20200419-1');
+define('VERSION','20200422-1');
 define('CRLF',"\r\n"); // always useful
 define('SESSION_KEY','myapp1');
 //========================= function header =============================

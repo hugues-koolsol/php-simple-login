@@ -171,7 +171,7 @@ function addTodo(){
  if(val!=''){
   var par=document.getElementById('foo');
   var child=document.createElement('li');
-  child.innerHTML='<button class="elt1">'+val+'</button><button class="delTodo">✘</button><button class="smiley">🤡</button>';
+  child.innerHTML='<button class="elt1">'+val+'</button><button class="delTodo">✘</button><button class="smiley">😀</button>';
   var childs=par.getElementsByTagName('li');
   if(childs.length==0){
    par.appendChild(child);
@@ -194,26 +194,77 @@ setTimeout(businessLogic,250);
 function _myObjSvelt1(p){
  this.obNam=p.objectName;
  this.countClick=0;
+ this.timerId1=null;
+ this.timerLimit=5; // en secondes
+ this.limiteAtteinte=false;
+ this.timeStart=0;
 }
-// input
+//========================================================================== 
+// click
+//========================================================================== 
+
+//========================================================================== 
+_myObjSvelt1.prototype.computerJob=function(){
+ _myObSv1.raz1();
+ if(_myObSv1.timerId2==null){
+  _myObSv1.timerId2=setInterval(function(){_myObSv1.addClickInput();},0);
+ }
+}
+//========================================================================== 
+_myObjSvelt1.prototype.displayTimer=function(){
+ var now=new Date();now=now.getTime();
+ var delta=now-_myObSv1.timeStart;
+ delta=parseInt(delta/100,10)/10;
+ if(delta>=5){
+  _myObSv1.limiteAtteinte=true;
+  _myObSv1.stopTimer();
+  clearTimeout(_myObSv1.timerId1);
+  clearTimeout(_myObSv1.timerId2);
+  document.getElementById('timer1').innerHTML=_myObSv1.timerLimit+' secondes';
+ }else{
+  document.getElementById('timer1').innerHTML=delta+' secondes';
+ }
+}
+//========================================================================== 
+_myObjSvelt1.prototype.stopTimer=function(){
+ _myObSv1.limiteAtteinte=true;
+ clearTimeout(_myObSv1.timerId1);
+ clearTimeout(_myObSv1.timerId2);
+ _myObSv1.timerId1=null;
+ _myObSv1.timerId2=null;
+ document.getElementById('timer1').innerHTML=_myObSv1.timerLimit+' secondes';
+}
 //========================================================================== 
 _myObjSvelt1.prototype.addClickInput=function(){
- this.countClick++;
- this.setClickInput();
+// console.log('addClickInput',_myObSv1.countClick,_myObSv1.limiteAtteinte,_myObSv1.countClick);
+ document.getElementById('computer1').setAttribute('disabled','disabled');
+ if(_myObSv1.countClick==0 &&   _myObSv1.limiteAtteinte==false && _myObSv1.timerId1==null){
+  setTimeout(function(){_myObSv1.stopTimer();},_myObSv1.timerLimit*1000);
+  _myObSv1.timerId1=setInterval(function(){_myObSv1.displayTimer();},10);
+  _myObSv1.timeStart=new Date();_myObSv1.timeStart=_myObSv1.timeStart.getTime();
+ }
+ if(_myObSv1.limiteAtteinte==false){
+  _myObSv1.countClick++;
+  _myObSv1.setClickInput();
+ }else{
+ }
+}
+//========================================================================== 
+_myObjSvelt1.prototype.raz1=function(){
+ document.getElementById('computer1').removeAttribute('disabled');
+ _myObSv1.limiteAtteinte=false;
+ _myObSv1.countClick=0;
+ _myObSv1.setClickInput();
+ 
 }
 //========================================================================== 
 _myObjSvelt1.prototype.setClickInput=function(){
- 
- document.getElementById('click1').innerHTML='Cliqué '+_myObSv1.countClick+' fois';
+ document.getElementById('click1').innerHTML='Cliqué '+_myObSv1.countClick+' fois &nbsp; 👉 &nbsp; 👈 &nbsp; ';
  document.getElementById('click1').style.background='hsla('+_myObSv1.countClick*10+', 100%, 93%, 1)';
- try{
-  localStorage.setItem('countClick', _myObSv1.countClick);
- }catch(e){
-  console.error(e);
- }
- 
 }
 
+
+//========================================================================== 
 // calculator
 //========================================================================== 
 _myObjSvelt1.prototype.computeCalculator=function(){
@@ -222,6 +273,7 @@ _myObjSvelt1.prototype.computeCalculator=function(){
 }
 
 
+//========================================================================== 
 // font size
 //========================================================================== 
 _myObjSvelt1.prototype.setFontSize=function(){
@@ -234,17 +286,19 @@ _myObjSvelt1.prototype.setFontSize=function(){
 //========================================================================== 
 _myObjSvelt1.prototype.init=function(){
   
-  // input
+  // click
   document.getElementById('click1').setAttribute('onclick','_myObSv1.addClickInput()');
-  document.getElementById('click1').innerHTML='Cliqué 0 fois';
-  try{
-   var tmp=localStorage.getItem('countClick');
-   if(!(tmp===null)){
-    _myObSv1.countClick=tmp;
-   }
-  }catch(e){
-   console.error(e);
-  }
+  document.getElementById('click1').style.border='2px plum outset';
+  document.getElementById('click1').innerHTML='Cliqué 0 fois &nbsp; 👉 &nbsp; 👈 &nbsp; ';
+  document.getElementById('reset1').innerHTML='&nbsp;RAZ&nbsp;';
+  document.getElementById('reset1').setAttribute('onclick','_myObSv1.raz1()');
+  document.getElementById('message1').innerHTML='Le but du jeu est de cliquer le plus de fois possibles pendant '+this.timerLimit+' secondes.';
+
+  document.getElementById('computer1').innerHTML='&nbsp; 💻 &nbsp;';
+  document.getElementById('computer1').setAttribute('onclick','_myObSv1.computerJob()');
+  
+  
+  
   _myObSv1.setClickInput();
 
 
@@ -257,8 +311,6 @@ _myObjSvelt1.prototype.init=function(){
   }
   _myObSv1.computeCalculator();
   
-
-
   // font size
   var tabEventInputs=['change','click','keyup','input','paste'];
   for(var item in tabEventInputs){
@@ -266,11 +318,6 @@ _myObjSvelt1.prototype.init=function(){
    document.getElementById('inp4').setAttribute('on'+tabEventInputs[item],'_myObSv1.setFontSize()');
   }
   _myObSv1.setFontSize();
-  
-
-
-
-  
 }
 
 var _myObSv1=new _myObjSvelt1({objectName:'_myObSv1'});

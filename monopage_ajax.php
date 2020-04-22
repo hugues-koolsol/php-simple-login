@@ -50,10 +50,10 @@ echo $htm1; $htm1='';
     <div class="boxtodo">
      Todo :-\
      <ul id="foo" style="border:1px blue solid;">
-      <li><button class="elt1">Ça c'est à faire et on peut ajouter un smiley avec le bouton ci-contre</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
-      <li><button class="elt1">On peut faire glisser ce todo dans lla colonne "Done :-)" puis le remettre dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
-      <li><button class="elt1">On peut aussi déplacer ce todo dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
-      <li><button class="elt1">On peut aussi modifier ce todo en cliquant dessus</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
+      <li><button class="elt1">Ça c'est à faire et on peut ajouter un smiley avec le bouton ci-contre</button><button class="delTodo">✘</button><button class="smiley">😀</button></li>
+      <li><button class="elt1">On peut faire glisser ce todo dans lla colonne "Done :-)" puis le remettre dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">😀</button></li>
+      <li><button class="elt1">On peut aussi déplacer ce todo dans cette colonne</button><button class="delTodo">✘</button><button class="smiley">😀</button></li>
+      <li><button class="elt1">On peut aussi modifier ce todo en cliquant dessus</button><button class="delTodo">✘</button><button class="smiley">😀</button></li>
      </ul>
     </div>
     
@@ -61,7 +61,7 @@ echo $htm1; $htm1='';
     <div class="boxtodo">
      Done :-)
      <ul  id="bar" style="border:1px green solid;">
-      <li><button class="elt1">Ca, c'est fait et on peut l'effacer avec le bouton "✘" ci-contre.</button><button class="delTodo">✘</button><button class="smiley">🤡</button></li>
+      <li><button class="elt1">Ca, c'est fait et on peut l'effacer avec le bouton "✘" ci-contre.</button><button class="delTodo">✘</button><button class="smiley">😀</button></li>
      </ul>
     </div>
     
@@ -83,16 +83,31 @@ echo $htm1; $htm1='';
    
    <p>
     <style>
-    #click1{
-     font-size:1.5em;
-     touch-action: manipulation; /* prevent double click zoom on touch device */
+    #click1,#reset1,#computer1{
+     font-size       : 1.5em;
+     touch-action    : manipulation; /* prevent double click zoom on touch device */
+     border          : 2px plum outset;
+     border-radius   : 5px;
+     outline         : none; /* no blue line */
     }
     </style>
+    <span id="message1">Le but du jeu est de cliquer le plus de fois possibles.</span>
+    <br />
+    timer :<span id="timer1"></span><br />
     <button id="click1" onclick="">Please wait!</button>
+    <button id="reset1" onclick="">Please wait!</button>
+    <button id="computer1" onclick="">Please wait!</button>
+    
    </p>
    
    <h3>Calculatrice</h3>
    <p>
+    <style>
+    #inp1,#inp2{
+     border:1px #ddd inset;
+     padding:5px;
+    }
+   </style>
    <input id="inp1" value="1" type="number">
    <input id="inp2" value="2" type="number">
    <p id="res1"></p>
